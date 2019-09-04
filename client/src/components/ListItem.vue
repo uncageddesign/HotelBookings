@@ -4,8 +4,9 @@
       <tr>
         <td>{{ booking.guestName }}</td>
         <td>{{ booking.guestEmail }}</td>
-        <td v-if="booking.checkedInStatus">Checked In</td>
-        <td><button v-on:click="deleteBooking">Delete</button></td>
+        <td v-if="booking.checkedInStatus">Already Checked In</td>
+        <td v-if="!booking.checkedInStatus"><button class="btn--checkIn" v-on:click="checkIn">Check In</button></td>
+        <td><button class="btn--delete" v-on:click="deleteBooking">Delete</button></td>
       </tr>
     </table>
   </div>
@@ -23,6 +24,9 @@ export default {
       BookingService.deleteBooking(this.booking._id)
       .then(() => eventBus.$emit('booking-deleted',
       this.booking._id))
+    },
+    checkIn(){
+      this.booking.checkedInStatus = true;
     }
   }
 }
@@ -34,6 +38,16 @@ td {
   min-width: 150px;
   margin-right: 5px;
   border-bottom: 1px solid lightgrey;
+}
+
+.btn--checkIn {
+  background-color: green;
+  color: white;
+}
+
+.btn--delete {
+  background-color: red;
+  color: white;
 }
 
 </style>
