@@ -2,9 +2,9 @@
   <div class="bookingTable">
     <table>
       <tr>
-        <td>Name: {{this.guestName}}</td>
-        <td>Email: {{this.guestEmail}}</td>
-        <td vi-if="checkedInStatus === true">Cheacked In</td>
+        <td>Name: {{ booking.guestName }}</td>
+        <td>Email: {{ booking.guestEmail }}</td>
+        <td vi-if="checkedInStatus === true">Checked In</td>
         <td><button on:click="deleteBooking">Delete</button></td>
       </tr>
     </table>
