@@ -5,7 +5,7 @@
         <td>{{ booking.guestName }}</td>
         <td>{{ booking.guestEmail }}</td>
         <td v-if="booking.checkedInStatus">Checked In</td>
-        <td><button on:click="deleteBooking">Delete</button></td>
+        <td><button v-on:click="deleteBooking">Delete</button></td>
       </tr>
     </table>
   </div>
@@ -20,7 +20,7 @@ export default {
   props: ['booking'],
   methods: {
     deleteBooking(){
-      BookingService.deleteGame(this.booking._id)
+      BookingService.deleteBooking(this.booking._id)
       .then(() => eventBus.$emit('booking-deleted',
       this.booking._id))
     }
@@ -31,7 +31,7 @@ export default {
 <style lang="css" scoped>
 td {
   padding: 5px;
-  min-width: 250px;
+  min-width: 150px;
   margin-right: 5px;
   border-bottom: 1px solid lightgrey;
 }
