@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <h2>Guest List</h2>
-    <list-item v-for="(guest, index) in bookings" :key="index" :guest="guest" />
+    <list-item v-for="(booking, index) in bookings" :key="index" :booking="booking" />
   </div>
 
 </template>
