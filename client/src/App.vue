@@ -21,12 +21,18 @@ export default {
 
 <style>
 body {
-  background-color: honeydew;
+  background-color: slategrey;
   font-family: sans-serif;
 }
 
 #app {
-  padding: 30px;
+  padding: 0 30px;
+}
+
+h1 {
+  color: snow;
+  font-size: 45px;
+  text-shadow: 2px 2px black;
 }
 
 </style>

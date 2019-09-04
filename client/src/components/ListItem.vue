@@ -31,7 +31,7 @@ export default {
 <style lang="css" scoped>
 td {
   padding: 5px;
-  min-width: 200px;
+  min-width: 250px;
   margin-right: 5px;
   border-bottom: 1px solid lightgrey;
 }
