@@ -4,7 +4,7 @@
       <tr>
         <td>{{ booking.guestName }}</td>
         <td>{{ booking.guestEmail }}</td>
-        <td vi-if="checkedInStatus === true">Checked In</td>
+        <td v-if="booking.checkedInStatus">Checked In</td>
         <td><button on:click="deleteBooking">Delete</button></td>
       </tr>
     </table>
