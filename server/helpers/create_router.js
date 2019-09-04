@@ -5,6 +5,7 @@ const createRouter = function (collection){
 
   const router = express.Router();
 
+  //INDEX
   router.get('/', (req, res) => {
     collection
     .find()
@@ -15,6 +16,15 @@ const createRouter = function (collection){
       res.status(500);
       res.json({ status: 500, error: err})
     });
+  });
+
+  // CREATE
+  router.post('/', (req, res) => {
+    const newBooking = req.body;
+    collection.insertOne(newBooking)
+    .then((result) => {
+      res.json(result.ops[0])
+    })
   });
 
   return router;
