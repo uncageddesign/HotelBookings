@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="bookingForm" method="post" v-on:sumbit="addBooking">
+  <form class="bookingForm" v-on:submit.prevent="addBooking">
     <label for="guestName">Name: </label>
     <input type="text" v-model="guestName" required>
 
@@ -28,9 +28,9 @@ export default {
     addBooking(book){
       book.preventDefault()
       const booking = {
-        name: this.guestName,
-        email: this.guestEmail,
-        checkedInStatus: this.checkedInStatus
+        guestName: this.guestName,
+        guestEmail: this.guestEmail,
+        checkedInStatus: false
       }
       BookingService.postBooking(booking)
       .then(res => eventBus.$emit('booking-added', res))
@@ -50,11 +50,6 @@ export default {
 input {
   margin-left: 5px;
   margin-right: 10px;
-}
-
-input:submit {
-  background-color: blue;
-  color: snow;
 }
 
 </style>
