@@ -20,7 +20,13 @@ export default {
 </script>
 
 <style>
-#app {
-
+body {
+  background-color: honeydew;
+  font-family: sans-serif;
 }
+
+#app {
+  padding: 30px;
+}
+
 </style>

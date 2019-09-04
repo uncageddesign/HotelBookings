@@ -1,10 +1,10 @@
 <template lang="html">
-  <form class="" method="post" v-on:sumbit="addGuest">
+  <form class="bookingForm" method="post" v-on:sumbit="addBooking">
     <label for="guestName">Name: </label>
-    <input type="text" v-model="guestName">
+    <input type="text" v-model="guestName" required>
 
     <label for="guestEmail">Email Address: </label>
-    <input type="text" v-model="guestEmail">
+    <input type="text" v-model="guestEmail" required>
 
     <input type="submit" value="Add Booking">
   </form>
@@ -25,7 +25,7 @@ export default {
     }
   },
   methods: {
-    addGuest(book){
+    addBooking(book){
       book.preventDefault()
       const booking = {
         name: this.guestName,
@@ -40,4 +40,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+.bookingForm {
+  padding: 20px;
+  margin: 10px;
+  background-color: snow;
+}
+
+
 </style>
