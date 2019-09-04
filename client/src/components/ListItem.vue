@@ -2,8 +2,8 @@
   <div class="bookingTable">
     <table>
       <tr>
-        <td>Name: {{ booking.guestName }}</td>
-        <td>Email: {{ booking.guestEmail }}</td>
+        <td>{{ booking.guestName }}</td>
+        <td>{{ booking.guestEmail }}</td>
         <td vi-if="checkedInStatus === true">Checked In</td>
         <td><button on:click="deleteBooking">Delete</button></td>
       </tr>
@@ -29,7 +29,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.bookingTable {
-
+td {
+  padding: 5px;
+  min-width: 200px;
+  margin-right: 5px;
+  border-bottom: 1px solid lightgrey;
 }
+
 </style>

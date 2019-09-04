@@ -43,9 +43,18 @@ export default {
 
 .bookingForm {
   padding: 20px;
-  margin: 10px;
+  margin-bottom: 10px;
   background-color: snow;
 }
 
+input {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+input:submit {
+  background-color: blue;
+  color: snow;
+}
 
 </style>

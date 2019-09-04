@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="guestlist">
     <h2>Guest List</h2>
     <list-item v-for="(booking, index) in bookings" :key="index" :booking="booking" />
   </div>
@@ -38,4 +38,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.guestlist {
+  background-color: snow;
+  padding: 20px;
+}
+
 </style>
