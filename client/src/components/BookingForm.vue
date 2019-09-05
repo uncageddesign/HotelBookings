@@ -1,5 +1,5 @@
 <template lang="html">
-  <form class="bookingForm" v-on:submit.prevent="addBooking">
+  <form class="bookingForm" v-on:submit="addBooking">
     <label for="guestName">Name: </label>
     <input type="text" v-model="guestName" required>
 
@@ -33,7 +33,12 @@ export default {
         checkedInStatus: false
       }
       BookingService.postBooking(booking)
-      .then(res => eventBus.$emit('booking-added', res))
+      .then((res) => {
+        this.guestName = "",
+        this.guestEmail = ""
+        
+        eventBus.$emit('booking-added', res)
+      })
     }
   }
 }
